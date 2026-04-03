@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indestructible Strength</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+                url('https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* HIDE SECTIONS */
+.page {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+/* INTRO */
+.intro-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.intro-content h1 {
+    font-family: 'Creepster', cursive;
+    font-size: 2.5em;
+    color: #38bdf8;
+}
+
+.continue-btn {
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: #38bdf8;
+    border: none;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+/* MAIN */
+header {
+    background: rgba(0,0,0,0.7);
+    padding: 30px;
+    font-size: 2em;
+}
+
+.profile-wrapper {
+    width: 180px;
+    height: 180px;
+    margin: 40px auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 5px solid #38bdf8;
+}
+
+.profile-wrapper img {
+    width: 100%;
+    height: 100%;
+}
+
+.leader-name {
+    color: #38bdf8;
+}
+
+/* BUTTON */
+.members-button a, .back-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: #38bdf8;
+    color: black;
+    text-decoration: none;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 15px;
+}
+
+/* MEMBERS */
+.members {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+}
+
+.member-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #38bdf8;
+    box-shadow: 0 0 20px rgba(56,189,248,0.7);
+}
+
+.member-pic img {
+    width: 100%;
+    height: 100%;
+}
+</style>
+</head>
+
+<body>
+
+<!-- INTRO -->
+<div class="intro-screen" id="introScreen">
+    <div class="intro-content">
+        <h1>Welcome to Indestructible Strength ⚔️</h1>
+        <button class="continue-btn" onclick="enterSite()">Continue</button>
+    </div>
+</div>
+
+<!-- HOME PAGE -->
+<div id="homePage" class="page active">
+    <header>Indestructible Strength</header>
+
+    <div class="profile-wrapper">
+        <img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png">
+    </div>
+
+    <h2>Main Leader</h2>
+    <p class="leader-name">Your Name Here</p>
+
+    <h2 style="color:#38bdf8;">I.S Members</h2>
+
+    <div class="members-button">
+        <a onclick="showMembers()">View All Members</a>
+    </div>
+</div>
+
+<!-- MEMBERS PAGE -->
+<div id="membersPage" class="page">
+    <h1 style="color:#38bdf8;">I.S Members</h1>
+
+    <div class="members">
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 1</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 2</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 3</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 4</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 5</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 6</p></div>
+        <div><div class="member-pic"><img src="https://i.ibb.co/3Y5RfRFc/yagami-light-shinigam.png"></div><p>Member 7</p></div>
+    </div>
+
+    <button class="back-btn" onclick="goHome()">⬅ Back</button>
+</div>
+
+<script>
+function enterSite() {
+    document.getElementById('introScreen').style.display = 'none';
+}
+
+function showMembers() {
+    document.getElementById('homePage').classList.remove('active');
+    document.getElementById('membersPage').classList.add('active');
+}
+
+function goHome() {
+    document.getElementById('membersPage').classList.remove('active');
+    document.getElementById('homePage').classList.add('active');
+}
+</script>
+
+</body>
+</html>
